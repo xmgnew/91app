@@ -6,12 +6,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class EZStage extends Stage {
+public final class EZStage extends Stage {
 
     private static EZStage instance;
 
     private EZStage() {
-        instance = new EZStage();
+        instance = this;
         // create label
         Label text = new Label("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\n");
         text.setStyle("-fx-alignment: center;");
@@ -23,7 +23,6 @@ public class EZStage extends Stage {
         instance.setTitle("EZ");
         instance.setScene(new Scene(pane));
         instance.setFullScreen(true);
-        instance.show();
     }
 
     public static synchronized EZStage getInstance(){
