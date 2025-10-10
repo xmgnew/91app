@@ -2,8 +2,9 @@ package com.expldfsh.app91;
 
 import java.util.Optional;
 
+import com.expldfsh.app91.subViews.EZStage;
+
 import javafx.application.HostServices;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -64,24 +65,7 @@ public class Controller implements EventHandler<ActionEvent> {
     }
 
     private void showEZStage() {
-        if (EZstage != null) {
-            EZstage.toFront();
-            EZstage.show();
-                return;
-        }
-        EZstage = new Stage();
-        // create label
-        Label text = new Label("EZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\nEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZEZ\n");
-        text.setStyle("-fx-alignment: center;");
-        text.styleProperty().bind(
-            Bindings.concat("-fx-font-size: ",
-            EZstage.widthProperty().add(EZstage.heightProperty()).divide(20).asString(), ";"));
-        Pane pane = new Pane(text);
-        pane.setMinSize(300, 300);
-        EZstage.setTitle("EZ");
-        EZstage.setScene(new Scene(pane));
-        EZstage.setFullScreen(true);
-        EZstage.show();
+        EZStage.getInstance().show();
     }
 
     private void showChikenStage() {
