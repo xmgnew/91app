@@ -1,4 +1,4 @@
-package com.expldfsh.app91;
+package com.expldfsh.appnineone;
 
 import java.io.IOException;
 import java.util.Observable;
@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,7 @@ public class App extends Application implements Observer {
     private Button EZButton = new Button("EZ");
     private Button chikenButtoon = new Button("Play chiken");
     private Button niubiButton = new Button("NB Button");
+    private Button CSMarket = new Button("CS库存小助手");
     private Button addVal = new Button("+1");
     private Button minusVal = new Button("-1");
     private TextField modelValue = new TextField("0");
@@ -37,6 +39,11 @@ public class App extends Application implements Observer {
         this.setController(c);
 
         stage.setTitle("91APP");
+
+        HBox counter = new HBox();
+        counter.setSpacing(0.91);
+        counter.getChildren().addAll(minusVal, modelValue, addVal);
+
         GridPane root = new GridPane();
         root.setHgap(20);
         root.setVgap(20);
@@ -44,9 +51,8 @@ public class App extends Application implements Observer {
         root.add(EZButton, 1, 0);
         root.add(chikenButtoon, 2, 0);
         root.add(niubiButton, 3, 0);
-        root.add(addVal, 2, 1);
-        root.add(modelValue, 1, 1);
-        root.add(minusVal, 0, 1);
+        root.add(counter, 0, 1);
+        root.add(CSMarket, 2, 1);
         stage.setScene(new Scene(root));
         stage.show();
     }
@@ -64,6 +70,7 @@ public class App extends Application implements Observer {
         EZButton.setOnAction(c);
         addVal.setOnAction(c);
         minusVal.setOnAction(c);
+        CSMarket.setOnAction(c);
     }
 
 }

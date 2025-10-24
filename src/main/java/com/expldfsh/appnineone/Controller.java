@@ -1,10 +1,11 @@
-package com.expldfsh.app91;
+package com.expldfsh.appnineone;
 
 import java.util.Optional;
 
-import com.expldfsh.app91.subViews.EZStage;
-import com.expldfsh.app91.subViews.NBStage;
-import com.expldfsh.app91.subViews.chikenStage;
+import com.expldfsh.appnineone.subViews.EZStage;
+import com.expldfsh.appnineone.subViews.MarketStage;
+import com.expldfsh.appnineone.subViews.NBStage;
+import com.expldfsh.appnineone.subViews.chikenStage;
 
 import javafx.application.HostServices;
 import javafx.event.ActionEvent;
@@ -61,6 +62,9 @@ public class Controller implements EventHandler<ActionEvent> {
             case "NB Button":
                 NBStage.getInstance().show();
                 break;
+            
+            case "CS库存小助手":
+                MarketStage.getInstance().show();
         }
     }
     // show Stage methods below -----------------------
